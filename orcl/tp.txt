@@ -1,0 +1,23 @@
+7-identifier le no de la base;le nom de instance;la taille des blocks size de donnees
+v$database;v$instance;v$parameter
+select name,value from v$parameter where name = 'db_block_size';
+8-le numero de la version oracle
+v$version
+9-enumiration les fichiers des donnees; redo log; controle
+10-options installes?
+11-max de proc utilsateurs;system;exp; pourant ce connecter simultanement a instance
+hint : vue dynamique de perf
+select name from v$parameter where name='processes';
+13-enum les para d initialisation par defaut;
+alter system kill session '146,145';
+alert et trace dans rdbms
+init file dans dbname
+controle file et datafile dans oradata
+pfile init.ora dans admin
+alter system enable restricted session;
+
+pour demarrer une base startup,arret:shutdown
+si la base est arreter startup restrict
+cas si la base et demarrer : alter system enable Restricted Session
+select * from dba_sys_privs;
+3 roles pour user basic:connect,dba,resource

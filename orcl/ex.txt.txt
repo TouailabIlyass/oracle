@@ -1,0 +1,30 @@
+
+SQL> create profile shprofile limit
+  2  connect_time 5
+  3  password_life_time unlimited
+  4  password_lock_time 15
+  5  failed_login_attempts 5;
+
+> create role shrole;
+> grant connect ,ressource,dba to shrole;
+
+
+SQL> create user sh profile shprofile identified by ss
+  2  default tablespace system
+  3  temporary tablespace temp
+  4  password expire
+  5  quota 2m on system
+  6  account unlock
+  7  ;
+
+User created.
+
+SQL> grant shrole to sh;
+
+Grant succeeded.
+
+select grantee,privilege from dba_sys_privs where privilege like '%RESTR%';
+
+select logins from v$instance;
+
+alter system enable restricted session;

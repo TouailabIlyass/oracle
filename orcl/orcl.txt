@@ -1,0 +1,3 @@
+sqlplus system/system@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=user)(Port=1521))(CONNECT_DATA=(SID=orcl)))
+
+sqlplus connection/connection@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=ORACLEPC)(Port=1521))(CONNECT_DATA=(SID=orcl)))
